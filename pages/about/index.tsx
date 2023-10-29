@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-key */
+
 import {
     FaHtml5,
     FaCss3,
@@ -26,6 +27,7 @@ import {
   } from "react-icons/gr"
   
   interface InfoWithIcons {
+    id: number;
     title: string;
     info: {
       title: string;
@@ -34,6 +36,7 @@ import {
   }
   
   interface InfoWithTitleAndStage {
+    id: number;
     title: string;
     info: {
       title: string;
@@ -44,6 +47,7 @@ import {
   //  data
   const aboutData: (InfoWithIcons | InfoWithTitleAndStage)[] = [
     {
+      id: 0,
       title: 'skills',
       info: [
         {
@@ -66,6 +70,7 @@ import {
     },
     
     {
+      id: 1,
       title: 'awards',
       info: [
         {
@@ -79,6 +84,7 @@ import {
       ],
     },
     {
+      id: 2,
       title: 'experience',
       info: [
         {
@@ -96,6 +102,7 @@ import {
       ],
     },
     {
+      id: 3,
       title: 'education',
       info: [
         {
@@ -191,12 +198,12 @@ import {
             <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 relative sm:-left-0 ssm:-left-[2.5rem] sssm:-left-[4rem] items-start'>
               {aboutData.map((item, itemIndex) => {
                 return (
-                  <div key={itemIndex} 
+                  <div key={item.id} 
                     className={`
-                    ${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} 
+                    ${index === item.id && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} 
                     cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px]
                     after:absolute after:bg-white after:-bottom-1 after:left-0`}
-                    onClick={() => setIndex(itemIndex)}
+                    onClick={() => setIndex(item.id)}
                   >
                     {item.title}
                   </div>
