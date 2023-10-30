@@ -3,7 +3,7 @@ import React from 'react'
 function Testimonials() {
   return (
     <div>
-      Testimonials
+      Documents: Resume and stuff 
     </div>
   )
 }
