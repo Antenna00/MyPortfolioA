@@ -9,10 +9,16 @@ import Avatar from "@/components/Avatar";
 // framer motion
 import { motion } from 'framer-motion';
 import { fadeIn } from "../variants";
+import { useLanguageContext } from "./_app";
+
 
 // variants
 
 export default function Home() {
+
+  const { languageStat, setLanguageStat } = useLanguageContext();
+ 
+
   return (
     <div className='bg-primary/60 h-full'>
       {/* text */}
@@ -22,18 +28,22 @@ export default function Home() {
           <motion.div variants={fadeIn('down', 0.2)} 
           initial='hidden' animate='show' exit='hidden' className='xl:flex xl:text-center z-[5]'>
             <h1 className='h1'>
-              <span className='underline'>Rin Kitajima</span> <br /> 
-              <span className='text-accent bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom'>Portofolio</span>
+              <span className='underline'>Rin Kitajima's</span> <br /> 
+              <span className='text-accent bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom'>Portfolio</span>
             </h1>
           </motion.div>
           {/* subtitle */}
+          {/* English State = true */}
           <motion.p variants={fadeIn('down', 0.3)} 
           initial='hidden' animate='show' exit='hidden' 
-          className='max-w-sm x:max-w-xl mx-auto xl:mx-0 mb-6 xl:mb-16 z-[5]'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Amet assumenda illum, similique reiciendis facere necessitatibus 
-            illo velit quasi enim natus, sequi impedit eligendi ratione totam cupiditate 
-            ipsum laboriosam odio eaque.
+          className={`${languageStat ? '' : 'hidden'} max-w-sm x:max-w-xl mx-auto xl:mx-0 mb-6 xl:mb-16 z-[5]`}>
+            Thanks for visiting my portfolio. 
+          </motion.p>
+          {/* Japanese State = false */}
+          <motion.p variants={fadeIn('down', 0.3)} 
+          initial='hidden' animate='show' exit='hidden' 
+          className={`${languageStat ? 'hidden' : ''} max-w-sm x:max-w-xl mx-auto xl:mx-0 mb-6 xl:mb-16 z-[5]`}>
+            日本語だよ
           </motion.p>
           {/* btn */}
           <div className='flex justify-center xl:hidden z-[5]'>

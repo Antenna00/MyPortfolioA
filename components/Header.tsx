@@ -8,6 +8,7 @@ import React from 'react'
 
 // components
 import Socials from '../components/Socials';
+import LamguageButton from './LanguageButton';
 
 function Header() {
   return (

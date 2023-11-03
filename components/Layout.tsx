@@ -13,7 +13,10 @@ const sora = Sora({
 import Nav from '../components/Nav';
 import Header from '../components/Header';
 import TopLeftImg from '../components/TopLeftImg';
+import LamguageButton from './LanguageButton';
 import { AppProps } from 'next/app';
+import LanguageButton from './LanguageButton';
+import { Analytics } from '@vercel/analytics/react';
 
 interface LayoutProps {
   children: ReactNode;
@@ -26,7 +29,9 @@ function Layout({ children }: LayoutProps) { //ここのfont後で確認
       <TopLeftImg/>
       <Nav />
       <Header />
+      <LanguageButton />
       {children}
+      <Analytics />
     </div>
   )
 }

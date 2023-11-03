@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 import Transition from '../components/Transition';
+import { Analytics } from '@vercel/analytics/react';
 
 //router
 import {useRouter} from 'next/router';
@@ -18,6 +19,19 @@ export function useAnimationContext() {
   }
   return context;
 }
+
+//language context
+const languageContext = createContext<{ 
+   languageStat: boolean; setLanguageStat: React.Dispatch<React.SetStateAction<boolean>> 
+ } | undefined>(undefined);
+ 
+ export function useLanguageContext() {
+   const context = useContext(languageContext);
+   if (!context) {
+     throw new Error('useLanguageContext must be used within an languageContextProvider');
+   }
+   return context;
+ }
 
 function MyApp({ Component, pageProps }: AppProps) {
    const router = useRouter();
@@ -44,8 +58,12 @@ const [animationStat, setAnimationStat] = useState(false);
 //     console.log("animation end");
 // }
 
+  //true = English false = Japanese
+  const [languageStat, setLanguageStat] = useState(true);
+
    return ( 
    <AnimationContext.Provider value={{ animationStat, setAnimationStat }}>
+   <languageContext.Provider value={{ languageStat, setLanguageStat }} >
    <Layout>
       <AnimatePresence mode="wait">
          <motion.div key={router.route} className='h-full'>  
@@ -54,6 +72,7 @@ const [animationStat, setAnimationStat] = useState(false);
          </motion.div>
       </AnimatePresence>
    </Layout>
+   </languageContext.Provider>
    </AnimationContext.Provider>
    )
 }

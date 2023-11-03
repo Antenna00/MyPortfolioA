@@ -23,6 +23,8 @@ import Link from 'next/link';
 // next router
 import { useRouter } from 'next/router';
 import { useAnimationContext } from '@/pages/_app';
+import LamguageButton from './LanguageButton';
+import LanguageButton from './LanguageButton';
 
 function Nav() {
   const router = useRouter();
