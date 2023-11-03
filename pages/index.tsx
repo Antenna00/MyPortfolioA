@@ -28,7 +28,7 @@ export default function Home() {
           <motion.div variants={fadeIn('down', 0.2)} 
           initial='hidden' animate='show' exit='hidden' className='xl:flex xl:text-center z-[5]'>
             <h1 className='h1'>
-              <span className='underline'>Rin Kitajima's</span> <br /> 
+              <span className='underline'>Rin Kitajima&apos;s</span> <br /> 
               <span className='text-accent bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom'>Portfolio</span>
             </h1>
           </motion.div>
