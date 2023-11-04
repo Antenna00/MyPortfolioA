@@ -38,12 +38,16 @@ export default function Home() {
           initial='hidden' animate='show' exit='hidden' 
           className={`${languageStat ? '' : 'hidden'} max-w-sm x:max-w-xl mx-auto xl:mx-0 mb-6 xl:mb-16 z-[5]`}>
             Thanks for visiting my portfolio. 
+            Here you will find the details of my skills, works and documents.
+            This page will gets updated 
           </motion.p>
           {/* Japanese State = false */}
           <motion.p variants={fadeIn('down', 0.3)} 
           initial='hidden' animate='show' exit='hidden' 
           className={`${languageStat ? 'hidden' : ''} max-w-sm x:max-w-xl mx-auto xl:mx-0 mb-6 xl:mb-16 z-[5]`}>
-            日本語だよ
+            Rin Kitajima （北島　凛）のポートフォリオへようこそ。<br />
+            こちらでは
+            アップデート：
           </motion.p>
           {/* btn */}
           <div className='flex justify-center xl:hidden z-[5]'>
