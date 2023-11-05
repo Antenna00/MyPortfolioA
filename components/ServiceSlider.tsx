@@ -21,7 +21,7 @@ import {
 } from 'react-icons/rx';
 
 // modules
-import  { FreeMode, Pagination } from 'swiper/modules';
+import  { Pagination } from 'swiper/modules';
 
 // interface
 interface serviceInfo {
@@ -75,7 +75,7 @@ function ServiceSlider() {
       pagination={{
         clickable: true
       }}
-      modules={[FreeMode, Pagination]}
+      modules={[Pagination]}
       
       >
         {
