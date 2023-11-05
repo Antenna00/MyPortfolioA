@@ -128,10 +128,12 @@ import {
 
   import { useRef, useState } from "react";
   import { IconType } from "react-icons";
+import { useLanguageContext } from "../_app";
 
   const About = () => {
     const [index, setIndex] = useState(0);
-    const countUpRef = useRef(null);
+    const {languageStat, setLanguageStat} = useLanguageContext();
+
     return (
       <div className='h-full bg-primary/30 py-32 text-center xl:text-left select-none'>
         <Circles />
@@ -140,9 +142,9 @@ import {
           <Avatar />
         </motion.div>
         {/* Main Contents */}
-        <div className="container mx-auto ssm:pb-5 h-full xl:gap-x-[10rem] flex relative flex-col items-center xl:flex-row xxl:px-[25rem] xl:px-[7rem] xl:z-40 gap-x-6">
+        <div className="container mx-auto ssm:pb-5 h-full xl:gap-x-[10rem] flex relative flex-col items-center justify-center xl:flex-row xxl:px-[25rem] xl:px-[7rem] xl:z-40 gap-x-6">
           {/* Text */}
-          <div className="xl:flex-1 flex flex-col xl:justify-center">
+          <div className="xl:flex-1 flex flex-col justify-center xl:justify-center">
             <motion.h2 className="h2" variants={fadeIn('right', 0.2)}
             initial='hidden' animate='show' exit='hidden'>
               About <span className="text-accent">Me</span>
