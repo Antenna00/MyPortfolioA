@@ -76,7 +76,7 @@ function ServiceSlider() {
         clickable: true
       }}
       modules={[Pagination]}
-      
+      className='h-[240px] sm:h-[500px] xxl:h-[700px]'
       >
         {
           serviceData.map((item, index) => {
