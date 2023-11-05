@@ -13,7 +13,7 @@ export const navData = [
   { name: 'About', path:'/about', icon: <HiUser />},
   { name: 'Services', path:'/services', icon: <HiRectangleGroup />},
   { name: 'Work', path:'/work', icon: <HiViewColumns />},
-  { name: 'Testimonials', path:'/testimonials', icon: <HiChatBubbleBottomCenterText />},
+  { name: 'Documents', path:'/documents', icon: <HiChatBubbleBottomCenterText />},
   { name: 'Contact', path:'/contact', icon: <HiEnvelope />},
 ]
 

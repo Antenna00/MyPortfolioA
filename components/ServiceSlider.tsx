@@ -94,7 +94,8 @@ function ServiceSlider() {
                 </div>
                 {/* arrow */}
                 <div className='text-3xl'>
-                  <RxArrowTopRight />
+                  <RxArrowTopRight className="group-hover:rotate-45
+                  group-hover:text-accent transition-all duration-300"/>
                 </div>
               </div>
             </SwiperSlide>

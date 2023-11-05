@@ -21,11 +21,11 @@ function LanguageButton() {
           <Switch
         classNames={{
           base: cn(
-            "relative inline-flex z-50 flex max-w-md w-[180px] bg-gray-700 hover:bg-gray-500 ",
+            "relative inline-flex z-50 flex w-[180px] bg-gray-700 hover:bg-gray-500 ",
             "cursor-pointer rounded-lg gap-2 p-4 border-2 border-pink-700",
             "data-[selected=true]:border-blue-700 justify-center items-center pl-6",
           ),
-          wrapper: "p-0 h-4 overflow-visible flex",
+          wrapper: "p-0 h-4 overflow-visible w-15",
           thumb: cn("w-6 h-6 border-2 shadow-lg",
             "group-data-[hover=true]:border-blue-700",
             //selected
