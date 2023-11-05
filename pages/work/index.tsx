@@ -31,7 +31,7 @@ function Work() {
             }
             initial = "hidden"
             animate = "show"
-            exit = "hidden" 
+            
             className='mb-4 max-w-[400px] mx-auto lg:mx-8'>
               Here are my works
             </motion.p>
@@ -43,18 +43,18 @@ function Work() {
             }
             initial = "hidden"
             animate = "show"
-            exit = "hidden"
+            
             className='mb-4 max-w-[400px] mx-auto lg:mx-8'>
               今までのプロジェクト
             </motion.p>
           </div>
           <motion.div 
             variants = {
-              fadeIn('up', 0.6)
+              fadeIn('up', 0.4)
             }
             initial = "hidden"
             animate = "show"
-            exit = "hidden"
+            
             className="w-full xl:max-w-[65%]">
             {/* Slider */}
             <WorkSlider />
