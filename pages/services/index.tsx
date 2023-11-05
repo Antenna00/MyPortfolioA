@@ -35,7 +35,7 @@ function services() {
             }
             initial = "hidden"
             animate = "show"
-            exit = "hidden"
+
             className = "h2 xl:mt-6">
               My services <span className='text-accent'>.</span>
             </motion.h2>
@@ -46,7 +46,7 @@ function services() {
             }
             initial = "hidden"
             animate = "show"
-            exit = "hidden" 
+
             className='mb-4 max-w-[400px] mx-auto lg:mx-8'>
               Here are my providable services.
             </motion.p>
@@ -58,7 +58,7 @@ function services() {
             }
             initial = "hidden"
             animate = "show"
-            exit = "hidden"
+
             className='mb-4 max-w-[400px] mx-auto lg:mx-8'>
               提供可能サービスの一覧：
             </motion.p>
@@ -69,7 +69,6 @@ function services() {
             }
             initial = "hidden"
             animate = "show"
-            exit = "hidden"
             className="w-full xl:max-w-[65%]">
             {/* Slider */}
             <ServiceSlider />
