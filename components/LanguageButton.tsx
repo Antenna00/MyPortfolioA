@@ -15,7 +15,7 @@ function LanguageButton() {
   };
 
     return (
-      <div className="flex absolute right-4 bottom-[6rem] xl:top-auto xl:bottom-5 xl:right-5">
+      <div className="absolute hidden ssm:flex right-4 bottom-[6rem] xl:top-auto xl:bottom-5 xl:right-5">
         <div className="flex relative z-50 items-center w-[180px]">
           <div style={containerStyle}>
           <Switch

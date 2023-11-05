@@ -67,7 +67,7 @@ const [animationStat, setAnimationStat] = useState(false);
    <Layout>
       <AnimatePresence mode="wait">
          <motion.div key={router.route} className='h-full'>  
-            {/* <Transition />    */}
+            <Transition /> 
             <Component {...pageProps} />
          </motion.div>
       </AnimatePresence>
