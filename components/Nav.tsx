@@ -39,8 +39,8 @@ function Nav() {
     {/* inner */}
       <div className='flex w-full items-center justify-between 
       xl:flex-col gap-y-10 px-4 xl:justify-center 
-      md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-white/20 marker:backdrop-blur-sm  
-      text-3xl xl:text-xl xl:rounded-full xl:w-[80px]'>
+      md:px-40 xl:px-0 h-[40px] xl:h-max py-8 bg-white/20 marker:backdrop-blur-sm  
+      xl:text-xl xl:rounded-full xl:w-[80px]'>
         {navData.map((link, i) => {
           return (
             <Link 
@@ -64,7 +64,7 @@ function Nav() {
                 {/* triangle */}
               </div>
               {/* icon */}
-              <div>{link.icon}</div>
+              <div className="text-[25px]">{link.icon}</div>
             </Link>
           );
         })}
