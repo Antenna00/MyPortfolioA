@@ -61,17 +61,7 @@ export const serviceData:serviceInfo[] = [
 
 function ServiceSlider() {
   return (
-    <Swiper breakpoints={
-      {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 1
-        },
-        960: {
-          slidesPerView: 3,
-          spaceBetween: 10
-        },
-      }}
+    <Swiper 
       pagination={{
         clickable: true
       }}
