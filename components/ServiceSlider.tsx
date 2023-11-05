@@ -72,7 +72,6 @@ function ServiceSlider() {
           spaceBetween: 10
         },
       }}
-      freeMode={true}
       pagination={{
         clickable: true
       }}
