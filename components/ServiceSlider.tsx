@@ -62,7 +62,6 @@ export const serviceData:serviceInfo[] = [
 function ServiceSlider() {
   return (
     <Swiper 
-      spaceBetween={10}
       pagination={{
         clickable: true
       }}

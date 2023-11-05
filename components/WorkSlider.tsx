@@ -59,7 +59,6 @@ const workSlider = {
 function WorkSlider() {
   return (
     <Swiper 
-      spaceBetween={10}
       pagination={{
         clickable: true
       }}
