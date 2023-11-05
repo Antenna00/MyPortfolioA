@@ -1,65 +1,62 @@
 import React from 'react'
-
-
-// swiper
+import { FreeMode, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
 // icons
-import {
-  RxCrop,
-  RxDesktop,
-  RxPencil2,
-  RxReader,
-  RxRocket,
-  RxArrowTopRight,
+import { BsArrowRight } from 'react-icons/bs';
 
-} from 'react-icons/rx';
+// next image
+import Image from 'next/image';
+const workSlider = {
+    slides: [
+      {
+        images: [
+          {
+            title: 'title',
+            path: '/Maintenance.jpg',
+          },
+          {
+            title: 'title',
+            path: '/Maintenance.jpg',
+          },
+          {
+            title: 'title',
+            path: '/Maintenance.jpg',
+          },
+          {
+            title: 'title',
+            path: '/Maintenance.jpg',
+          },
+        ],
+      },
+      {
+        images: [
+          {
+            title: 'title',
+            path: '/Maintenance.jpg',
+          },
+          {
+            title: 'title',
+            path: '/Maintenance.jpg',
+          },
+          {
+            title: 'title',
+            path: '/Maintenance.jpg',
+          },
+          {
+            title: 'title',
+            path: '/Maintenance.jpg',
+          },
+        ],
+      },
+    ],
+  };
 
-// modules
-import  { Pagination } from 'swiper/modules';
-
-// interface
-interface serviceInfo {
-  icon: JSX.Element,
-  title: String,
-  description: String,
-}
-
-// service data
-export const serviceData:serviceInfo[] = [
-  {
-    icon: <RxCrop />,
-    title: "Branding",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  },
-  {
-    icon: <RxPencil2 />,
-    title: "Design",
-    description: "Lorem ipsum"
-  },
-  {
-    icon: <RxDesktop />,
-    title: "Development",
-    description: "Lorem ipsum"
-  },
-  {
-    icon: <RxReader />,
-    title: "Development",
-    description: "Lorem ipsum"
-  },
-  {
-    icon: <RxRocket />,
-    title: "SEO",
-    description: "Lorem ipsum"
-  },
-]
-
-function ServiceSlider() {
+function WorkSlider() {
   return (
     <Swiper 
       spaceBetween={10}
@@ -70,22 +67,45 @@ function ServiceSlider() {
       className='h-[240px] sm:h-[500px] xxl:h-[700px]'
       >
         {
-          serviceData.map((item, index) => {
+          workSlider.slides.map((item, index) => {
             return (
             <SwiperSlide key={index}>
-              <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer">
-                {/* Icon */}
-                <div className="text-4xl text-accent mb-4">{item.icon}</div>
-                {/* title & description */}
-                <div className="mb-8">
-                  <div>{item.title}</div>
-                  <p>{item.description}</p> 
-                </div>
-                {/* arrow */}
-                <div className='text-3xl'>
-                  <RxArrowTopRight className="group-hover:rotate-45
-                  group-hover:text-accent transition-all duration-300"/>
-                </div>
+              <div className='grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer'>
+                {item.images.map((image, index) => {
+                  return (
+                  <div key={index} 
+                  className='relative rounded-lg overflow-hidden flex
+                  items-center justify-center group'>
+                    <div className="flex items-center justify-center relative
+                    overflow-hidden group"> 
+                      {/* image */}
+                      <Image src={image.path} width={500} height={300} alt='' />
+                      {/* overlay gradient */}
+                      <div className='absolute inset-0 bg-gradient-to-l from-transparent
+                       via-[#E612DF] to-[#4A0A83] opacity-0 group-hover:opacity-50
+                       transition-all duration-700 drop-shadow-md'> 
+                      </div>
+
+                      <div className='absolute bottom-0 translate-y-full group-hover:-translate-y-10
+                      group-hover:xl:-translate-y-20 group-hover:xxl:-translate-y-36
+                      transition-all duration-300'>
+                        {/* title */}
+                        <div className="flex items-center gap-x-2 text-white font-bold font-bo
+                        text-[30px] tracking-[0.2rem]">
+                          {/* title 1 */}
+                          <div className='delay-100'>LIVE</div>
+                          {/* title 2 */}
+                          <div className='translate-y-[500%] group-hover:translate-y-0
+                          transition-all duration-300 delay-150'>PROJECT</div>
+                          <div className='text-[40px] translate-y-[500%] group-hover:translate-y-0
+                          transition-all duration-300 delay-200 text-accent'><BsArrowRight /></div>
+                        </div>
+                      </div>
+                  
+                    </div>
+                  </div>
+                  )
+                })}
               </div>
             </SwiperSlide>
           )})
@@ -94,4 +114,4 @@ function ServiceSlider() {
   )
 }
 
-export default ServiceSlider
+export default WorkSlider
