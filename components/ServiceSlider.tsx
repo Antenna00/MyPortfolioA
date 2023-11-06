@@ -93,7 +93,7 @@ function ServiceSlider() {
   
 
   return (
-    <>
+    <div className="h-full w-full">
     <Swiper 
     id="swiper-container"
       spaceBetween={0}
@@ -133,7 +133,7 @@ function ServiceSlider() {
           )})
         }
       </Swiper>
-      </>
+      </div>
   )
 }
 

@@ -69,7 +69,7 @@ function services() {
             }
             initial = "hidden"
             animate = "show"
-            className="w-full xl:max-w-[65%]">
+            className="flex w-full xl:max-w-[65%]">
             {/* Slider */}
             <ServiceSlider />
           </motion.div>
