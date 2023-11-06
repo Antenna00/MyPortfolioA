@@ -74,7 +74,8 @@ function ServiceSlider() {
   const destoryProcess = () => {
     console.log("destroy")
     swiperRef.current?.destroy(true, true)
-    swiperRef.current?.removeAllSlides();
+    swiperRef.current?.removeAllSlides;
+    swiperRef.current?.updateSize;
   }
   useEffect(() => {
 
