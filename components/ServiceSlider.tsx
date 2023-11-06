@@ -72,12 +72,13 @@ function ServiceSlider() {
   let beforeMount = false;
 
   const destoryProcess = () => {
-    console.log("destroy");
-    swiperRef.current?.destroy(true, true);
+    console.log("destroy")
+    swiperRef.current?.destroy(true, true)
   }
   useEffect(() => {
 
     return () => {
+      router.events.off("routeChangeStart", destoryProcess);
       destoryProcess();
       console.log("unmounting component...");
     }
