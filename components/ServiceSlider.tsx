@@ -79,12 +79,13 @@ function ServiceSlider() {
     document.getElementById("swiper-container")?.remove();
   }
   useEffect(() => {
-    if(beforeMount === true) {document.getElementById("swiper-container")?.remove();}
-
+    document.getElementById("swiper-component")?.removeEventListener("beforeunload", destoryProcess)
     window.removeEventListener("beforeunload", destoryProcess)
+    
     return () => {
-      window.removeEventListener("beforeunload", destoryProcess)
-      console.log("unmounting component...");
+      swiperRef.current?.destroy(true, true)
+      
+      //console.log("unmounting component...");
     }
     //console.log("destroyed")
    //swiperRef.current?.destroy(true,true)
@@ -92,6 +93,7 @@ function ServiceSlider() {
   
 
   return (
+    <>
     <Swiper 
     id="swiper-container"
       spaceBetween={0}
@@ -131,6 +133,7 @@ function ServiceSlider() {
           )})
         }
       </Swiper>
+      </>
   )
 }
 

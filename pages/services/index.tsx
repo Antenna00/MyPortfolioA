@@ -64,7 +64,11 @@ function services() {
             </motion.p>
           </div>
           <motion.div 
-
+            variants = {
+              fadeIn('up', 0.6)
+            }
+            initial = "hidden"
+            animate = "show"
             className="w-full xl:max-w-[65%]">
             {/* Slider */}
             <ServiceSlider />
