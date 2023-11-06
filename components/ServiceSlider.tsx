@@ -80,8 +80,8 @@ function ServiceSlider() {
   useEffect(() => {
 
     return () => {
-      router.events.off("routeChangeStart", destoryProcess);
       destoryProcess();
+      window.removeEventListener("beforeunload", destoryProcess)
       console.log("unmounting component...");
     }
     //console.log("destroyed")
