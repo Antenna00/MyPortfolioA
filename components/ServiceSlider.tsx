@@ -79,7 +79,9 @@ function ServiceSlider() {
     document.getElementById("swiper-container")?.remove();
   }
   useEffect(() => {
+    if(beforeMount === true) {document.getElementById("swiper-container")?.remove();}
 
+    window.removeEventListener("beforeunload", destoryProcess)
     return () => {
       window.removeEventListener("beforeunload", destoryProcess)
       console.log("unmounting component...");
@@ -101,8 +103,9 @@ function ServiceSlider() {
       onSwiper={(swiper) => {
         swiperRef.current = swiper;
     }}
-      onBeforeDestroy={() => {
-      beforeMount = true;}}
+    onDestroy={() => {}}
+      onBeforeDestroy={(swiper) => { 
+     }}
       key='swiper'
       >
         {

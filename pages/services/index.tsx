@@ -35,7 +35,7 @@ function services() {
             }
             initial = "hidden"
             animate = "show"
-
+            
             className = "h2 xl:mt-6">
               My services <span className='text-accent'>.</span>
             </motion.h2>
@@ -64,11 +64,7 @@ function services() {
             </motion.p>
           </div>
           <motion.div 
-            variants = {
-              fadeIn('up', 0.6)
-            }
-            initial = "hidden"
-            animate = "show"
+
             className="w-full xl:max-w-[65%]">
             {/* Slider */}
             <ServiceSlider />
