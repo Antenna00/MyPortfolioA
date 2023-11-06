@@ -76,11 +76,11 @@ function ServiceSlider() {
     swiperRef.current?.destroy(true, true)
     swiperRef.current?.removeAllSlides;
     swiperRef.current?.updateSize;
+    document.getElementById("swiper-container")?.remove();
   }
   useEffect(() => {
 
     return () => {
-      destoryProcess();
       window.removeEventListener("beforeunload", destoryProcess)
       console.log("unmounting component...");
     }
