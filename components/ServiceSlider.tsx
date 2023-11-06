@@ -1,13 +1,12 @@
-import React from 'react'
-
+import React, { RefObject, createContext, createRef, useEffect, useRef, useState } from 'react'
 
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+import { type Swiper as SwiperRef } from 'swiper';
 
 // icons
 import {
@@ -21,7 +20,12 @@ import {
 } from 'react-icons/rx';
 
 // modules
-import  { Pagination } from 'swiper/modules';
+import  { Controller, Pagination } from 'swiper/modules';
+import { clearLine } from 'readline';
+import { useSwiper } from 'swiper/react';
+import { useAnimationContext } from '@/pages/_app';
+import { useRouter } from "next/router";
+
 
 // interface
 interface serviceInfo {
@@ -59,14 +63,44 @@ export const serviceData:serviceInfo[] = [
   },
 ]
 
+
+
 function ServiceSlider() {
+  const swiperRef = useRef<SwiperRef>()
+  const {animationStat, setAnimationStat} = useAnimationContext();
+  const router = useRouter();
+  let beforeMount = false;
+
+  const destoryProcess = () => {
+    console.log("destroy");
+    swiperRef.current?.destroy(true, true);
+  }
+  useEffect(() => {
+
+    return () => {
+      destoryProcess();
+      console.log("unmounting component...");
+    }
+    //console.log("destroyed")
+   //swiperRef.current?.destroy(true,true)
+    }, []);
+  
+
   return (
     <Swiper 
+    id="swiper-container"
+      spaceBetween={0}
       pagination={{
         clickable: true
       }}
-      modules={[Pagination]}
+      modules={[Controller, Pagination]}
       className='h-[240px] sm:h-[500px] xxl:h-[700px]'
+      onSwiper={(swiper) => {
+        swiperRef.current = swiper;
+    }}
+      onBeforeDestroy={() => {
+      beforeMount = true;}}
+      key='swiper'
       >
         {
           serviceData.map((item, index) => {
